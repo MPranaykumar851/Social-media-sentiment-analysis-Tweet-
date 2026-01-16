@@ -1,66 +1,102 @@
-# Social Media Sentiment Analysis using Machine Learning
-
-This project implements a machine learning-based sentiment analysis system to classify social media tweets into **Negative**, **Neutral**, and **Positive** sentiments.
 
 ---
 
-## 📌 Project Overview
-
-Social media platforms generate massive amounts of unstructured text data.  
-This project focuses on analyzing tweet sentiment using classical NLP and machine learning techniques.
-
----
-
-## 🛠️ Technologies Used
-
-- Python
-- Pandas, NumPy
-- NLTK
-- Scikit-learn
-- Matplotlib
+## 🔍 Data Preprocessing
+The following preprocessing steps were applied:
+- Text cleaning (lowercasing, punctuation removal)
+- Tokenization
+- Stopword removal
+- POS tagging
+- Lemmatization using WordNet
+- Rare word analysis
 
 ---
 
-## 🔍 Workflow
-
-1. Data Loading and Cleaning
-2. Text Preprocessing  
-   - Lowercasing  
-   - Tokenization  
-   - Stopword removal  
-   - POS tagging  
-   - Lemmatization  
-3. Feature Extraction  
-   - Count Vectorization  
-   - TF-IDF Vectorization  
-4. Model Training  
-   - Logistic Regression  
-5. Model Evaluation  
-   - Accuracy  
-   - Classification Report  
-   - Confusion Matrix  
-6. Comparison of Count Vectorizer vs TF-IDF
+## 📊 Exploratory Data Analysis (EDA)
+The EDA phase includes:
+- Class distribution analysis
+- Word frequency analysis
+- Rare vs frequent word identification
+- Histogram of cumulative word frequencies
+- Long-tail distribution analysis (Zipf’s Law)
+- Outlier detection (very short and very long tweets)
 
 ---
 
-## 📊 Results Summary
+## 🔑 Feature Extraction
+Two feature extraction techniques were implemented and compared:
 
-| Feature Extraction | Accuracy |
-|--------------------|----------|
-| Count Vectorizer   | ~XX%     |
-| TF-IDF Vectorizer  | ~XX%     |
+### 1️⃣ Count Vectorization
+- Converts text into a sparse matrix of word counts
+- Captures raw frequency information
 
-TF-IDF performed better by reducing the influence of frequent but less informative words.
-
----
-
-## 📈 Confusion Matrix
-
-Confusion matrices are used to visualize the classification performance for each sentiment class.
+### 2️⃣ TF-IDF Vectorization
+- Weighs words based on importance
+- Reduces the impact of common words
+- Improves generalization
 
 ---
 
-## 🚀 How to Run
+## 🤖 Model Training
+- **Algorithm Used:** Logistic Regression
+- **Reason:** Efficient baseline model for text classification
+- Trained separately using:
+  - Count Vectorizer features
+  - TF-IDF features
 
-```bash
-pip install -r requirements.txt
+---
+
+## 📈 Model Evaluation
+The model was evaluated using:
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix (visualized using Matplotlib)
+
+### Comparison Performed:
+- Count Vectorizer vs TF-IDF
+- Per-class performance analysis
+- Misclassification trends across sentiments
+
+---
+
+## 🧪 Results Summary
+- TF-IDF outperformed Count Vectorization
+- Neutral sentiment showed higher confusion with other classes
+- Logistic Regression handled noisy social media text reasonably well
+- Class imbalance impacted recall for minority classes
+
+---
+
+## ⚠️ Limitations
+- Sensitive to sarcasm and slang
+- Cannot capture context or word order
+- Performance depends heavily on preprocessing quality
+
+---
+
+## 🚀 Future Improvements
+- Use advanced models (Naive Bayes, SVM)
+- Apply deep learning models (LSTM, Transformers)
+- Handle sarcasm and emojis
+- Use word embeddings (Word2Vec, GloVe, BERT)
+
+---
+
+## 📌 Conclusion
+This project demonstrates an end-to-end **NLP pipeline** for sentiment analysis, covering:
+- Data preprocessing
+- Exploratory analysis
+- Feature extraction
+- Model training
+- Evaluation and comparison
+
+It provides a strong baseline system and a foundation for more advanced sentiment analysis research.
+
+---
+
+## 👨‍💻 Author
+**Pranay**  
+Computer Science Undergraduate  
+Interest Areas: Machine Learning, NLP, Data Science
